@@ -1,0 +1,11 @@
+region  = "KR"
+zone    = "KR-1"
+
+# public / fin / gov
+site    = "public"
+
+ncloud_access_key = ""
+ncloud_secret_key = ""
+
+db_service_prefix = ""
+db_admin_password = ""
