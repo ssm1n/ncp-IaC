@@ -21,11 +21,6 @@ variable "mode" {
   default = "SIMPLE"   # SIMPLE | CLUSTER
 }
 
-variable "is_ha" {
-  type    = bool
-  default = false
-}
-
 variable "redis_version" {
   type    = string
   default = "7.0.13-simple"

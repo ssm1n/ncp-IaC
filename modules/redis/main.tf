@@ -31,7 +31,7 @@ resource "ncloud_redis" "redis" {
   # user_password (gov에서만)
   # image_product_code
   # product_code
-  # engine_version_code
+  # engine_version_code 
   # shard_count      
   # shard_copy_count  
   # is_backup 
