@@ -1,5 +1,5 @@
 output "endpoint" {
-  value = "${ncloud_redis.redis.service_name}:${ncloud_redis.redis.port}"
+  value = "${ncloud_redis.redis.redis_server_list[0].private_domain}:${ncloud_redis.redis.port}"
 }
 
 output "config_group_no" {

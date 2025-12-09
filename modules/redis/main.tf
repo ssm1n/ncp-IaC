@@ -3,7 +3,7 @@
 terraform {
   required_providers {
     ncloud = {
-      source = "navercloudplatform/ncloud"
+      source = "NaverCloudPlatform/ncloud"
     }
   }
 }
@@ -26,7 +26,7 @@ resource "ncloud_redis" "redis" {
   mode               = var.mode
 
   # -- 선택 필드 --
-  is_ha = var.is_ha
+  is_ha = false
   # user_name (gov에서만)
   # user_password (gov에서만)
   # image_product_code

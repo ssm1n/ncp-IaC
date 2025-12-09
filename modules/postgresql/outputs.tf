@@ -1,5 +1,5 @@
 output "endpoint" {
-  value = "${ncloud_postgresql.postgresql.database_name}:${ncloud_postgresql.postgresql.port}"
+  value = "${ncloud_postgresql.postgresql.postgresql_server_list[0].private_domain}:${ncloud_postgresql.postgresql.port}"
 }
 
 output "instance_no" {
