@@ -1,2 +1,2 @@
 # ncp-IaC
-Terraform 기반 NCP 인프라 프로비저닝
+Terraform 기반 NCP DB 프로비저닝 
