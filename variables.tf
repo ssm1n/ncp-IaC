@@ -56,16 +56,12 @@ variable "private_subnet_cidr" {
   default     = "10.0.1.0/24"
 }
 
-# DB 공통 prefix
-
-variable "db_service_prefix" {
-  description = "서비스 이름 prefix"
-  type        = string
-  default     = "test"
+# DB 공통 설정
+variable "user_password" {
+  type = string
+  sensitive = true
 }
 
-variable "db_admin_password" {
-  description = "테스트용 공통 DB admin 패스워드 (우선 DB 모두 통일)"
-  type        = string
-  sensitive   = true
+variable "user_name" {
+  type = string
 }

@@ -1,17 +1,25 @@
 # https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/postgresql
+
+terraform {
+  required_providers {
+    ncloud = {
+      source = "navercloudplatform/ncloud"
+    }
+  }
+}
+
 resource "ncloud_postgresql" "postgresql" {
   # -- 필수 필드 --
-  service_name       = "tf-postgresql"     
-  server_name_prefix = "tf-pg"              
+  service_name       = var.service_name
+  server_name_prefix = var.server_name_prefix
+  user_name          = var.user_name
+  user_password      = var.user_password
 
-  user_name          = "nb61276"            
-  user_password      = var.db_admin_password 
+  vpc_no             = var.vpc_no
+  subnet_no          = var.subnet_no
 
-  vpc_no             = ncloud_vpc.this.vpc_no
-  subnet_no          = ncloud_subnet.private.id
-
-  client_cidr        = "0.0.0.0/0"           
-  database_name      = "tf-postgresql"              
+  client_cidr        = var.client_cidr
+  database_name      = var.database_name         
 
   # -- 선택 필드 --
   # --- 이미지 / 버전 ---

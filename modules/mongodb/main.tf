@@ -1,16 +1,25 @@
 # https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/mongodb
+
+terraform {
+  required_providers {
+    ncloud = {
+      source = "navercloudplatform/ncloud"
+    }
+  }
+}
+
 resource "ncloud_mongodb" "mongodb" {
   # --필수 필드--
-  vpc_no             = ncloud_vpc.this.vpc_no
-  subnet_no          = ncloud_subnet.private.id
+  vpc_no             = var.vpc_no
+  subnet_no          = var.subnet_no
 
-  service_name       = "tf-mongodb"        
-  server_name_prefix = "tf-mongo"          
+  service_name       = var.service_name
+  server_name_prefix = var.server_name_prefix
 
-  user_name          = "nb61276"           
-  user_password      = var.db_admin_password
+  user_name          = var.user_name
+  user_password      = var.user_password
 
-  cluster_type_code  = "STAND_ALONE" # Options: STAND_ALONE | SINGLE_REPLICA_SET | SHARDED_CLUSTER
+  cluster_type_code  = "STAND_ALONE"   
 
   # --선택 필드 --
   # --- 이미지/버전 관련 ---

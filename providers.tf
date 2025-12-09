@@ -3,7 +3,7 @@ terraform {
 
   required_providers {
     ncloud = {
-      source  = "NavercloudPlatform/ncloud"
+      source  = "navercloudplatform/ncloud"
       version = ">= 3.2.0"
     }
   }

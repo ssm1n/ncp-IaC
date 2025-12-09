@@ -1,13 +1,22 @@
 # https://registry.terraform.io/providers/NaverCloudPlatform/ncloud/latest/docs/resources/mysql
+
+terraform {
+  required_providers {
+    ncloud = {
+      source = "navercloudplatform/ncloud"
+    }
+  }
+}
+
 resource "ncloud_mysql" "mysql" {
   # -- 필수 필드 --
-  subnet_no = ncloud_subnet.private.id
-  service_name       = "tf-mysql"
-  server_name_prefix = "${var.db_service_prefix}-mysql"
-  database_name      = "tf-mysql"
-  host_ip            = "%"
-  user_name     = "nb61276"
-  user_password = var.db_admin_password
+  subnet_no = var.subnet_no
+  service_name  = var.service_name
+  server_name_prefix = var.server_name_prefix
+  user_name = var.user_name
+  user_password = var.user_password
+  host_ip = var.host_ip          
+  database_name = var.database_name
 
   # -- 선택 필드 --
   is_ha = true
