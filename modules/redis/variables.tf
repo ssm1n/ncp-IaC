@@ -23,5 +23,5 @@ variable "mode" {
 
 variable "redis_version" {
   type    = string
-  default = "7.0.13-simple"
+  default = "7.2.11-simple"
 }
