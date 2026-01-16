@@ -2,7 +2,7 @@ output "mysql_endpoint" {
   value = module.mysql.endpoint
 }
 
-output "mmsql_endpoint" {
+output "mssql_endpoint" {
   value = module.mssql.endpoint
 }
 
